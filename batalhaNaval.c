@@ -73,13 +73,13 @@ int main() {
     for (int i = 0; i < alturaCone; i++) {
         int linha = baseLinha - i;
         int inicio = baseColuna - i;
-        int fim = baseColuna + 1;
+        int fim = baseColuna + i;
 
         if (linha < 0) break;
         if (inicio < 0) inicio = 0;
         if (fim > 9) fim = 9;
 
-        for (int j = inicio; j < fim; j++) {
+        for (int j = inicio; j <= fim; j++) {
             if (tabuleiro[linha][j] == 0) {
                 tabuleiro [linha][j] = 1; // numero para forma do cone
             }
