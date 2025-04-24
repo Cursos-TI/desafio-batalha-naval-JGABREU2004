@@ -72,7 +72,7 @@ int main() {
 
     for (int i = 0; i < alturaCone; i++) {
         int linha = baseLinha - i;
-        int largura = alturaCone - i - 1; // vai diminuindo quando sobre
+        int largura = alturaCone - i - 1; // vai diminuindo quando sobe
         int inicio = baseColuna - largura;
         int fim = baseColuna + largura;
 
@@ -83,6 +83,30 @@ int main() {
         for (int j = inicio; j <= fim; j++) {
             if (tabuleiro[linha][j] == 0) {
                 tabuleiro [linha][j] = 1; // numero para forma do cone
+            }
+        }
+    }
+
+    // forma de cruz, usando o numero 2
+    // definir o centro, base da linha, coluna e a altura da cruz
+
+    int centroLinha = 2; // posição linha
+    int centroColuna = 8; // posição coluna
+    int alturaCruz = 3; // altura
+
+    for (int i = 0; i < alturaCruz; i++) {
+        int linha = baseLinha - i;
+        int largura = alturaCruz - i - 1; // vai diminuindo quando sobe
+        int inicio = baseColuna - largura;
+        int fim = baseColuna + largura;
+
+        if (linha < 0) break;
+        if (inicio < 0) inicio = 0;
+        if (fim > 9) fim = 9;
+
+        for (int j = inicio; j <= fim; j++) {
+            if (tabuleiro[linha][j] == 0) {
+                tabuleiro [linha][j] = 2; // numero para forma da cruz
             }
         }
     }
