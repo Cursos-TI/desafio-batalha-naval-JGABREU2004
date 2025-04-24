@@ -45,16 +45,28 @@ int main() {
         { tabuleiro[i][j] = 0;}        
     }
     for (int i = 5; i < 5 + 3; i++) { // colocação do navio vertical
-        tabuleiro[i][6] = 3;
+        if (tabuleiro [i][6] == 0) {   
+            tabuleiro[i][6] = 3;
+        } else { printf("Posição já ocupada\n");
+        }
     }   
     for (int j = 3; j < 3 + 3; j++) { // colocação do navio na horizontal
-        tabuleiro[3][j] = 3;
+        if (tabuleiro [3][j] == 0) {
+            tabuleiro[3][j] = 3;
+        } else { printf("Posição já ocupada\n");
+        }
     }   
     for (int i = 0; i < 3 ; i++) { // colocação do navio na diagonal
-        tabuleiro[i][i] = 3;
+        if (tabuleiro[3 + i][i] == 0) {
+            tabuleiro[3 + i][i] = 3;
+        } else { printf("Posição já ocupada\n");
+        }
     }
     for (int i = 0; i < 3 ; i++) { // colocação do navio na diagonal
-        tabuleiro[i][9 - i] = 3;
+        if (tabuleiro[i][5 - i] == 0) {
+            tabuleiro[i][5 - i] = 3;
+        } else { printf("Posição já ocupada\n");
+        }
     }
         printf("   "); // espaço no canto superior
 
