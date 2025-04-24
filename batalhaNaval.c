@@ -4,11 +4,6 @@
 // Este código inicial serve como base para o desenvolvimento do sistema de Batalha Naval.
 // Siga os comentários para implementar cada parte do desafio.
 
-// Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
-    // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
-    // Sugestão: Posicione quatro navios no tabuleiro, incluindo dois na diagonal.
-    // Sugestão: Exiba o tabuleiro completo no console, mostrando 0 para posições vazias e 3 para posições ocupadas.
-
 // Nível Mestre - Habilidades Especiais com Matrizes
     // Sugestão: Crie matrizes para representar habilidades especiais como cone, cruz, e octaedro.
     // Sugestão: Utilize estruturas de repetição aninhadas para preencher as áreas afetadas por essas habilidades no tabuleiro.
@@ -71,14 +66,18 @@ int main() {
     // forma do cone, usando o numero 1
     // definir a base da linha, coluna e a altura do cone
 
-    int baseLinha = 0;
-    int baseColuna = 0;
-    int alturaCone = 0;
+    int baseLinha = 9;
+    int baseColuna = 2;
+    int alturaCone = 3;
 
-    for (int i = 0, i < alturaCone, i++) {
+    for (int i = 0; i < alturaCone; i++) {
         int linha = baseLinha - i;
         int inicio = baseColuna - i;
         int fim = baseColuna + 1;
+
+        if (linha < 0) break;
+        if (inicio < 0) inicio = 0;
+        if (fim > 9) fim = 9;
 
         for (int j = inicio; j < fim; j++) {
             if (tabuleiro[linha][j] == 0) {
