@@ -68,13 +68,34 @@ int main() {
         } else { printf("Posição já ocupada\n");
         }
     }
-        printf("   "); // espaço no canto superior
+    // forma do cone, usando o numero 1
+    // definir a base da linha, coluna e a altura do cone
 
+    int baseLinha = 0;
+    int baseColuna = 0;
+    int alturaCone = 0;
+
+    for (int i = 0, i < alturaCone, i++) {
+        int linha = baseLinha - i;
+        int inicio = baseColuna - i;
+        int fim = baseColuna + 1;
+
+        for (int j = inicio; j < fim; j++) {
+            if (tabuleiro[linha][j] == 0) {
+                tabuleiro [linha][j] = 1; // numero para forma do cone
+            }
+        }
+    }
+
+    // cabeçalho
+    printf("   "); // espaço no canto superior
+    
     for (int j = 0; j < 10; j++) {
         printf(" %c ", coluna[j]); // impressão coluna
     }   printf("\n");
-
-    for (int i = 0; i < 10; i++) { // impressão do tabuleiro
+    
+    // impressão do tabuleiro
+    for (int i = 0; i < 10; i++) { 
         printf("%2d ", i + 1);
         for (int j = 0; j < 10; j++) {
             printf(" %d ", tabuleiro[i][j]);
