@@ -66,14 +66,15 @@ int main() {
     // forma do cone, usando o numero 1
     // definir a base da linha, coluna e a altura do cone
 
-    int baseLinha = 9;
-    int baseColuna = 2;
-    int alturaCone = 3;
+    int baseLinha = 9; // posição linha
+    int baseColuna = 2; // posição coluna
+    int alturaCone = 3; // altura
 
     for (int i = 0; i < alturaCone; i++) {
         int linha = baseLinha - i;
-        int inicio = baseColuna - i;
-        int fim = baseColuna + i;
+        int largura = alturaCone - i - 1; // vai diminuindo quando sobre
+        int inicio = baseColuna - largura;
+        int fim = baseColuna + largura;
 
         if (linha < 0) break;
         if (inicio < 0) inicio = 0;
